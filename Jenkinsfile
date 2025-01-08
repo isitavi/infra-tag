@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     // Fetch the repo and checkout by tag
-                    git url: "https://github.com/bkash-ce/infra-tag-deployment", branch: "test", credentialsId: 'devops'
+                    git url: "https://github.com/bKash-CloudEngineering/infra-tag-test", branch: "test", credentialsId: 'devops'
                     sh """
                        git fetch --all --tags
                        git fetch origin "refs/tags/${params.INFRA_TAG}:refs/tags/${params.INFRA_TAG}" || exit 1
