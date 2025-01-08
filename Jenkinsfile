@@ -9,7 +9,7 @@ pipeline {
         stage('Validate Tag') {
             steps {
                 script {
-                    if (!params.INFRA_TAG.matches(/^v\\d+\\.\\d+\\.\\d+-(uat|lt|prod)-[a-zA-Z0-9-]+(?:-\\d+)?$/)) {
+                    if (!params.INFRA_TAG.matches(/^v\\d+\\.\\d+\\.\\d+-(uat|lt|prod)-([a-zA-Z0-9-]+)(-\\d+)?$/)) {
                         error "Invalid tag format. Must be in format vX.Y.Z-uat/lt/prod-description or vX.Y.Z-uat/lt/prod-description-XX"
                     }
                     echo "Environment selected: ${params.ENVIRONMENT}"
