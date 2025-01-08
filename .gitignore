@@ -1,0 +1,6 @@
+.terraform
+.DS_Store
+ansible/host_vars/.DS_Store
+.idea
+terraform/.terraform
+lib/
