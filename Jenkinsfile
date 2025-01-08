@@ -11,7 +11,7 @@ pipeline {
                 script {
                     echo "Tag received: ${params.INFRA_TAG}"
 
-                    if (!params.INFRA_TAG.matches(/^v\\d+\\.\\d+\\.\\d+-(uat|lt|prod)-[a-zA-Z0-9-]+$/)) {
+                    if (!params.INFRA_TAG.matches(/^v\d+\.\d+\.\d+-(uat|lt|prod)-[a-zA-Z0-9-]+$/)) {
                         error "Invalid tag format. Must be in format vX.Y.Z-uat/lt/prod-description"
                     }
                     else {
