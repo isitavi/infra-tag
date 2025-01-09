@@ -23,19 +23,17 @@ pipeline {
             }
         }
         stage('Checkout Infra Code') {
-            steps {
-                script {
-                    // Fetch the repo and checkout by tag
-                    git url: "https://github.com/bKash-CloudEngineering/infra-tag-test", branch: "test", credentialsId: 'devops'
-                    sh """
-                       # This is a comment in shell
-                       git fetch --all --tags
-                       git fetch origin "refs/tags/${params.INFRA_TAG}:refs/tags/${params.INFRA_TAG}" || exit 1
-                       git checkout tags/${params.INFRA_TAG} -b release-${params.INFRA_TAG}
-                    """
+                    steps {
+                        script {
+                            // Use Jenkins' built-in Git checkout
+                            checkout([
+                                $class: 'GitSCM',
+                                branches: [[name: "refs/tags/${params.INFRA_TAG}"]],
+                                userRemoteConfigs: [[url: 'https://github.com/example-repo/infra-tag-test', credentialsId: 'devops']]
+                            ])
+                        }
+                    }
                 }
-            }
-        }
         stage('Terraform Plan') {
             when {
                 expression { params.terraformchanges == 'yes' }
