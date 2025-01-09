@@ -28,7 +28,8 @@ pipeline {
                     // Fetch the repo and checkout by tag
                     git url: "https://github.com/bKash-CloudEngineering/infra-tag-test", branch: "test", credentialsId: 'devops'
                     sh """
-//                        git fetch --all --tags
+                       # This is a comment in shell
+                       git fetch --all --tags
                        git fetch origin "refs/tags/${params.INFRA_TAG}:refs/tags/${params.INFRA_TAG}" || exit 1
                        git checkout tags/${params.INFRA_TAG} -b release-${params.INFRA_TAG}
                     """
