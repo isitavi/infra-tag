@@ -29,7 +29,7 @@ pipeline {
                             checkout([
                                 $class: 'GitSCM',
                                 branches: [[name: "refs/tags/${params.INFRA_TAG}"]],
-                                userRemoteConfigs: [[url: 'https://github.com/example-repo/infra-tag-test', credentialsId: 'devops']]
+                                userRemoteConfigs: [[url: 'https://github.com/bKash-CloudEngineering/infra-tag-test', credentialsId: 'devops']]
                             ])
                         }
                     }
