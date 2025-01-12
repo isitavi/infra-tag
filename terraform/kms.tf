@@ -7,6 +7,6 @@ resource "aws_kms_key" "ssm_key" {
 
 # Create an alias for the KMS key
 resource "aws_kms_alias" "ssm_key_alias" {
-  name          = "alias/${local.env}-ssm-encryption-key" # Dynamic alias name based on the environment
+  name          = "alias/${local.env}-ssm-encryption" # Dynamic alias name based on the environment
   target_key_id = aws_kms_key.ssm_key.id
 }
