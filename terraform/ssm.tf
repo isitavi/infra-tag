@@ -26,3 +26,17 @@ resource "aws_ssm_parameter" "param4" {
   value  = local.ssm_values[local.env].param4
   key_id = aws_kms_key.ssm_key.arn
 }
+
+resource "aws_ssm_parameter" "param5" {
+  name   = "${local.env}-param5"
+  type   = "SecureString"
+  value  = local.ssm_values[local.env].param5
+  key_id = aws_kms_key.ssm_key.arn
+}
+
+resource "aws_ssm_parameter" "param6" {
+  name   = "${local.env}-param6"
+  type   = "SecureString"
+  value  = local.ssm_values[local.env].param6
+  key_id = aws_kms_key.ssm_key.arn
+}
