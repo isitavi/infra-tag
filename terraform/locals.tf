@@ -20,7 +20,7 @@ locals {
       param1 = "securevalue-prod1"
       param2 = "securevalue-prod2"
       param3 = "securevalue-prod3"
-      param4 = "securevalue-prod4"
+      param4 = "securevalue-changed-prod4-hotfix"
     }
   }
 
