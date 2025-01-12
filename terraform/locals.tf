@@ -21,6 +21,8 @@ locals {
       param2 = "securevalue-prod2"
       param3 = "securevalue-prod3"
       param4 = "securevalue-prod4"
+      param5 = "securevalue-prod5"
+      param6 = "securevalue-prod6"
     }
   }
 
