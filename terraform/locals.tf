@@ -15,6 +15,8 @@ locals {
       param2 = "securevalue-uat2"
       param3 = "securevalue-uat3"
       param4 = "securevalue-uat4"
+      param5 = "securevalue-prod5"
+      param6 = "securevalue-prod6"
     }
     prod = {
       param1 = "securevalue-prod1"
